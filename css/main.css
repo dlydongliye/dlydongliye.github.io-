@@ -160,7 +160,7 @@ p img {
 }
 p.lead {
 	font-family: "lora-regular", serif;
-	font-size: 2rem;
+	font-size: 2.3rem;
 	line-height: 1.8;
 	color: #888888;
 }
@@ -2056,6 +2056,68 @@ header .logo a {
 	border-radius: 50%;
 }
 
+
+/** 
+ * ===================================================================
+ * download pages
+ *
+ * ------------------------------------------------------------------- 
+ */
+ /** 
+ * ===================================================================
+ * 08. common styles (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+.down-section {
+	background: #ebebeb;
+}
+.down-section p.lead {
+	color: #7d7d7d;
+}
+.down-intro {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-bottom: 0rem;
+	position: relative;
+}
+.down-intro h1 {
+	font-family: "poppins-semibold", serif;
+	font-size: 0rem;
+	color: #313131;
+	line-height: 1.25;
+	margin-bottom: 1.2rem;
+}
+.down-intro h5 {
+	color: #FF0077;
+	font-size: 1.6rem;
+	line-height: 1.875;
+	margin-bottom: 0.3rem;
+	letter-spacing: .4rem;
+}
+ 
+#down {
+	padding-top: 10.2rem;
+	padding-bottom: 0rem;
+	text-align: center;
+}
+#down p.lead {
+	color: #6e6e6e;
+}
+.down-content {
+	max-width: 640px;
+}
+.down-thumb {
+	display: inline-block;
+	margin-bottom: 1.2rem;
+}
+.down-thumb img {
+	height: 7.8rem;
+	width: 7.8rem;
+	border-radius: 50%;
+}
 /**
  * section ads - (_layout.scss)
  * ------------------------------------------------------------------- 

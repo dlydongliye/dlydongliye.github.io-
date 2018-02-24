@@ -1,0 +1,473 @@
+@import url("fonts.css");
+@import url("font-awesome/css/font-awesome.min.css");
+@import url("micons/micons.css");
+
+
+/** 
+ * ===================================================================
+ * 02. base style overrides - (_document-setup.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+html {
+	font-size: 10px;
+}
+
+@media only screen and (max-width:1024px) {
+	html {
+		font-size: 9.411764705882353px;
+	}
+}
+@media only screen and (max-width:768px) {
+	html {
+		font-size: 10px;
+	}
+}
+@media only screen and (max-width:400px) {
+	html {
+		font-size: 9.411764705882353px;
+	}
+}
+
+html, body {
+	height: 100%;
+}
+body {
+	background: #ebebeb;
+	font-family: "lora-regular", serif;
+	font-size: 1.7rem;
+	line-height: 3rem;
+	color: #6e6e6e;
+}
+
+/**
+ * links - (_document-setup.scss)
+ * -------------------------------------------------------------------
+ */
+/** 
+ * ===================================================================
+ * 09. header styles - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+header {
+	position: fixed;
+	width: 100%;
+	min-height: 66px;
+	z-index: 600;
+}
+header .row {
+	position: relative;
+	min-height: 66px;
+}
+header .top-bar {
+	display: block;
+	background: #000000;
+	min-width: 220px;
+	min-height: 66px;
+	position: absolute;
+	left: 90px;
+	top: 0;
+}
+header .logo {
+	float: left;
+	margin-left: 20px;
+	margin-right: 50px;
+	margin-top: 25px;
+	position: relative;
+}
+header .logo a {
+	display: block;
+	margin: 0;
+	padding: 0;
+	border: none;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	width: 92px;
+	height: 15px;
+	background:  no-repeat center;
+	background-size: 92px 15px;
+}
+
+/**
+ * menu toggle - (_layout.css)
+ * ------------------------------------------------------------------- 
+ */
+.menu-toggle {
+	float: left;
+	width: 40px;
+	height: 40px;
+	margin-left: 20px;
+	margin-top: 13px;
+	display: block;
+	position: relative;
+}
+.menu-toggle span {
+	display: block;
+	background-color: #FF0077;
+	width: 24px;
+	height: 3px;
+	margin-top: -1.5px;
+	font: 0/0 a;
+	text-shadow: none;
+	color: transparent;
+	position: absolute;
+	right: 8px;
+	top: 50%;
+	bottom: auto;
+	left: auto;
+	-moz-transition: background 0.2s ease-in-out;
+	-o-transition: background 0.2s ease-in-out;
+	-webkit-transition: background 0.2s ease-in-out;
+	-ms-transition: background 0.2s ease-in-out;
+	transition: background 0.2s ease-in-out;
+}
+.menu-toggle span::before, .menu-toggle span::after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-color: inherit;
+	position: absolute;
+	left: 0;
+	-moz-transition-duration: 0.2s, 0.2s;
+	-o-transition-duration: 0.2s, 0.2s;
+	-webkit-transition-duration: 0.2s, 0.2s;
+	-ms-transition-duration: 0.2s, 0.2s;
+	transition-duration: 0.2s, 0.2s;
+	-moz-transition-delay: 0.2s, 0s;
+	-o-transition-delay: 0.2s, 0s;
+	-webkit-transition-delay: 0.2s, 0s;
+	-ms-transition-delay: 0.2s, 0s;
+	transition-delay: 0.2s, 0s;
+}
+.menu-toggle span::before {
+	top: -8px;
+	-moz-transition-property: top, transform;
+	-o-transition-property: top, transform;
+	-webkit-transition-property: top, transform;
+	-ms-transition-property: top, transform;
+	transition-property: top, transform;
+}
+.menu-toggle span::after {
+	bottom: -8px;
+	-moz-transition-property: bottom, transform;
+	-o-transition-property: bottom, transform;
+	-webkit-transition-property: bottom, transform;
+	-ms-transition-property: bottom, transform;
+	transition-property: bottom, transform;
+}
+
+/* is clicked */
+.menu-toggle.is-clicked span {
+	background-color: rgba(255, 0, 119, 0);
+}
+.menu-toggle.is-clicked span::before, .menu-toggle.is-clicked span::after {
+	background-color: #ff0077;
+	-moz-transition-delay: 0s, 0.2s;
+	-o-transition-delay: 0s, 0.2s;
+	-webkit-transition-delay: 0s, 0.2s;
+	-ms-transition-delay: 0s, 0.2s;
+	transition-delay: 0s, 0.2s;
+}
+.menu-toggle.is-clicked span::before {
+	top: 0;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(45deg);
+}
+.menu-toggle.is-clicked span::after {
+	bottom: 0;
+	-webkit-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+/* navigation panel */
+#main-nav-wrap {
+	display: block;
+	width: 100%;
+	font-family: "poppins-medium", sans-serif;
+	font-size: 1.5rem;
+	position: absolute;
+	top: 100%;
+	left: 0;
+}
+
+/* dropdown nav */
+.main-navigation {
+	background: #000000;
+	padding: 24px 30px 42px;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	clear: both;
+	display: none;
+}
+.main-navigation > li {
+	display: block;
+	height: auto;
+	text-align: left;
+	padding: 0;
+}
+.main-navigation li a {
+	display: block;
+	color: #FFFFFF;
+	width: auto;
+	padding: 15px 0;
+	line-height: 16px;
+	border: none;
+}
+.main-navigation li a:hover {
+	color: #FF0077;
+	padding-left: 1rem;
+}
+.main-navigation li.current > a {
+	background: none;
+	color: #FF0077;
+}
+
+/**
+ * responsive:
+ * header styles
+ * --------------------------------------------------------------- 
+ */
+@media only screen and (max-width:1024px) {
+	header .top-bar {
+		left: 60px;
+	}
+}
+@media only screen and (max-width:768px) {
+	header .top-bar {
+		left: 50px;
+	}
+}
+@media only screen and (max-width:600px) {
+	header .top-bar {
+		left: 35px;
+	}
+}
+@media only screen and (max-width:400px) {
+	header .top-bar {
+		left: 25px;
+	}
+}
+
+
+
+/** 
+ * ===================================================================
+ * download pages
+ *
+ * ------------------------------------------------------------------- 
+ */
+ /** 
+ * ===================================================================
+ * 08. common styles (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+.down-section {
+	background: #ebebeb;
+}
+.down-section p.lead {
+	color: #7d7d7d;
+}
+.down-intro {
+	max-width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-bottom: 0rem;
+	position: relative;
+}
+.down-intro h1 {
+	font-family: "poppins-semibold", serif;
+	font-size: 5rem;
+	color: #313131;
+	line-height: 1.25;
+	margin-bottom: 1.2rem;
+}
+.down-intro h5 {
+	color: #FF0077;
+	font-size: 1.6rem;
+	line-height: 1.875;
+	margin-bottom: 0.3rem;
+	letter-spacing: .4rem;
+}
+ 
+#down {
+	padding-top: 10.2rem;
+	padding-bottom: 0rem;
+	text-align: center;
+}
+#down p.lead {
+	color: #6e6e6e;
+	font-size: 2.5rem;
+}
+.down-content {
+	max-width: 640px;
+}
+.down-thumb {
+	display: inline-block;
+	margin-bottom: 1.2rem;
+}
+.down-thumb img {
+	height: 7.8rem;
+	width: 7.8rem;
+	border-radius: 50%;
+}
+/**
+ * section ads - (_layout.scss)
+ * ------------------------------------------------------------------- 
+ */
+.section-ads h2 {
+	position: relative;
+	padding-bottom: 2.1rem;
+	font-size: 3rem;
+}
+.section-ads h2::after {
+	content: "";
+	display: block;
+	height: 3px;
+	width: 80px;
+	background: rgba(0, 0, 0, 0.2);
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	margin-left: -40px;
+}
+.section-ads h2 a, .section-ads h2 a:visited {
+	color: #313131;
+}
+.section-ads span {
+	color: #3F0D39;
+}
+
+/**
+ * responsive:
+ * cta
+ * -------------------------------------------------------------------
+ */
+@media only screen and (max-width:650px) {
+	.cta-content {
+		max-width: 650px;
+	}
+	.cta-content h2 {
+		font-size: 2.4rem;
+	}
+}
+
+
+/** 
+ * ===================================================================
+ * 18. footer - (_layout.scss)
+ *
+ * ------------------------------------------------------------------- 
+ */
+footer{position:absolute;bottom:0;width:100%;height:100px;background-color: #ebebeb;font-size: 1.4rem;
+	font-family: "poppins-regular", sans-serif;} 
+ 
+footer a, footer a:visited {
+	color: #FFFFFF;
+}
+footer a:hover, footer a:focus {
+	color: #FF0077;
+}
+footer .row {
+	max-width: 900px;
+}
+footer .social {
+	text-align: right;
+}
+footer .footer-social {
+	display: inline-block;
+	font-size: 2.1rem;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	top: -.3rem;
+}
+footer .footer-social li {
+	display: inline-block;
+	margin: 0 12px;
+	padding: 0;
+}
+footer .footer-social li a {
+	color: #FFFFFF;
+}
+footer . span {
+	display: inline-block;
+	text-align: right;
+}
+footer . span::after {
+	content: "|";
+	display: inline-block;
+	padding: 0 1rem 0 1.2rem;
+	color: rgba(255, 255, 255, 0.1);
+}
+footer . span:last-child::after {
+	display: none;
+}
+
+/**
+ * responsive:
+ * footer
+ * -------------------------------------------------------------------
+ */
+@media only screen and (max-width:768px) {
+	footer {
+		text-align: right;
+	}
+	footer .social {
+		display: block;
+		width: 100%;
+		text-align: right;
+		margin-bottom: 1.5rem;
+	}
+	footer . span {
+		display: block;
+	}
+	footer . span::after {
+		display: none;
+	}
+}
+
+/**
+ * go to top - (_layout.scss)
+ * ------------------------------------------------------------------- 
+ */
+#go-top {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 600;
+	display: none;
+}
+#go-top a {
+	text-decoration: none;
+	border: 0 none;
+	display: block;
+	height: 6.6rem;
+	width: 6rem;
+	line-height: 6.6rem;
+	text-align: center;
+	background: #cc005f;
+	color: #FFFFFF;
+	text-align: center;
+	text-transform: uppercase;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+#go-top a i {
+	font-size: 1.6rem;
+	line-height: inherit;
+}
+#go-top a:hover {
+	background: #000000;
+}
+
+/*# sourceMappingURL=main.css.map */
