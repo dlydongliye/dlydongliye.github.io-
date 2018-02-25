@@ -733,6 +733,7 @@ button.button-hireme:hover,
 button.stroke:hover, .button.stroke:hover {
 	border: 3px solid #FF0077;
 	color: #FF0077;
+	position: relative;
 }
 input[type="submit"].button-hireme:hover,
 input[type="reset"].button-hireme:hover,
@@ -745,7 +746,32 @@ input[type="button"].button-hireme:focus {
 	background: #ffffff;
 }
 
-
+.button.button-private,
+a.button.button-private,
+button.button-private,
+input[type="submit"].button-private,
+input[type="reset"].button-private,
+input[type="button"].button-hireme {
+	background: #FF0077;
+	color: #FFFFFF;
+}
+.button.button-private:hover,
+a.button.button-private:hover,
+button.button-private:hover,
+button.stroke:hover, .button.stroke:hover {
+	color: #313131;
+	position: relative;
+}
+input[type="submit"].button-private:hover,
+input[type="reset"].button-private:hover,
+input[type="button"].button-private:hover,
+.button.button-private:focus,
+button.button-private:focus,
+input[type="submit"].button-private:focus,
+input[type="reset"].button-private:focus,
+input[type="button"].button-private:focus {
+	background: #313131;
+}
 
 
 
