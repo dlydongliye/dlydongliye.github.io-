@@ -716,6 +716,39 @@ input[type="reset"].button-primary:focus,
 input[type="button"].button-primary:focus {
 	background: #1f1f1f;
 }
+
+.button.button-hireme,
+a.button.button-hireme,
+button.button-hireme,
+input[type="submit"].button-hireme,
+input[type="reset"].button-hireme,
+input[type="button"].button-hireme {
+	background: #FFFFFF;
+	color: #313131;
+	border: 3px solid #313131;
+}
+.button.button-hireme:hover,
+a.button.button-hireme:hover,
+button.button-hireme:hover,
+button.stroke:hover, .button.stroke:hover {
+	border: 3px solid #FF0077;
+	color: #FF0077;
+}
+input[type="submit"].button-hireme:hover,
+input[type="reset"].button-hireme:hover,
+input[type="button"].button-hireme:hover,
+.button.button-hireme:focus,
+button.button-hireme:focus,
+input[type="submit"].button-hireme:focus,
+input[type="reset"].button-hireme:focus,
+input[type="button"].button-hireme:focus {
+	background: #ffffff;
+}
+
+
+
+
+
 button.full-width, .button.full-width {
 	width: 100%;
 	margin-right: 0;
